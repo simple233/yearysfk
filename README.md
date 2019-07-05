@@ -6,6 +6,17 @@
 * mysql >= 5.5
 * linux
 
+### 安装后务必添加nginx伪静态
+```
+location / {
+   if (!-e $request_filename) {
+   rewrite  ^(.*)$  /index.php?$1  last;
+   break;
+    }
+ }
+
+```
+
 ### demo地址：[http://syfk.phpke.cn](http://syfk.phpke.cn/)
 
 ### BUG反馈、程序交流 QQ群：568679748
